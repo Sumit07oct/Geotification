@@ -137,3 +137,60 @@ extension GeofenceViewController: CLLocationManagerDelegate {
   
 }
 
+// MARK: - MapView Delegate
+extension GeofenceViewController: MKMapViewDelegate {
+  
+  func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+    let identifier = "myGeotification"
+    if annotation is Geotification {
+      var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKPinAnnotationView
+      if annotationView == nil {
+        annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+        annotationView?.canShowCallout = true
+        let removeButton = UIButton(type: .custom)
+        removeButton.frame = CGRect(x: 0, y: 0, width: 23, height: 23)
+        removeButton.setImage(UIImage(named: "DeleteGeotification")!, for: .normal)
+        annotationView?.leftCalloutAccessoryView = removeButton
+      } else {
+        annotationView?.annotation = annotation
+      }
+      return annotationView
+    }
+    return nil
+  }
+  
+  
+  func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+    if overlay is MKCircle {
+      let circleRenderer = MKCircleRenderer(overlay: overlay)
+      circleRenderer.lineWidth = 1.0
+      circleRenderer.strokeColor = .purple
+      circleRenderer.fillColor = UIColor.purple.withAlphaComponent(0.4)
+      return circleRenderer
+    }
+    return MKOverlayRenderer(overlay: overlay)
+  }
+  
+  func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+    // Delete geotification
+    let geotification = view.annotation as! Geotification
+    remove(geotification)
+    saveAllGeotifications()
+  }
+  
+}
+
+// MARK: AddGeotificationViewControllerDelegate
+extension GeofenceViewController: AddGeofenceViewControllerDelegate {
+  
+  func addGeotificationViewController(_ controller: AddGeofenceViewController, didAddCoordinate coordinate: CLLocationCoordinate2D, radius: Double, identifier: String, note: String, eventType: Geotification.EventType) {
+    controller.dismiss(animated: true, completion: nil)
+    let clampedRadius = min(radius, locationManager.maximumRegionMonitoringDistance)
+    let geotification = Geotification(coordinate: coordinate, radius: clampedRadius, identifier: identifier, note: note, eventType: eventType)
+    add(geotification)
+    startMonitoring(geotification: geotification)
+    saveAllGeotifications()
+  }
+  
+}
+
