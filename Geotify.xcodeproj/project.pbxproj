@@ -23,7 +23,7 @@
 /* Begin PBXFileReference section */
 		0F1A6DBF22420312004F9E1C /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		0F1A6DC12242048C004F9E1C /* AddGeofenceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGeofenceViewController.swift; sourceTree = "<group>"; };
-		A16373B92054471A0065C2D9 /* Google.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Google.gpx; sourceTree = "<group>"; };
+		A16373B92054471A0065C2D9 /* MyVillage.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = MyVillage.gpx; sourceTree = "<group>"; };
 		A16373BA2054475A0065C2D9 /* SimulatedLocations.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SimulatedLocations.gpx; sourceTree = "<group>"; };
 		D90CB64D1A739B7A00228A1F /* Geofence.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Geofence.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D90CB6511A739B7A00228A1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -122,7 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				D9C1AF6B1A77CD6C00A06B2F /* Apple.gpx */,
-				A16373B92054471A0065C2D9 /* Google.gpx */,
+				A16373B92054471A0065C2D9 /* MyVillage.gpx */,
 				A16373BA2054475A0065C2D9 /* SimulatedLocations.gpx */,
 				D90CB6511A739B7A00228A1F /* Info.plist */,
 			);
@@ -141,9 +141,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D90CB64C1A739B7A00228A1F /* Geotify */ = {
+		D90CB64C1A739B7A00228A1F /* \ */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D90CB66C1A739B7A00228A1F /* Build configuration list for PBXNativeTarget "Geotify" */;
+			buildConfigurationList = D90CB66C1A739B7A00228A1F /* Build configuration list for PBXNativeTarget "\" */;
 			buildPhases = (
 				D90CB6491A739B7A00228A1F /* Sources */,
 				D90CB64A1A739B7A00228A1F /* Frameworks */,
@@ -153,7 +153,7 @@
 			);
 			dependencies = (
 			);
-			name = Geotify;
+			name = "\\";
 			productName = Geotify;
 			productReference = D90CB64D1A739B7A00228A1F /* Geofence.app */;
 			productType = "com.apple.product-type.application";
@@ -194,7 +194,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D90CB64C1A739B7A00228A1F /* Geotify */,
+				D90CB64C1A739B7A00228A1F /* \ */,
 			);
 		};
 /* End PBXProject section */
@@ -356,7 +356,7 @@
 				INFOPLIST_FILE = Geotify/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com..geofence.com;
+				PRODUCT_BUNDLE_IDENTIFIER = com.geotify.com;
 				PRODUCT_NAME = Geofence;
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
@@ -371,7 +371,7 @@
 				INFOPLIST_FILE = Geotify/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com..geofence.com;
+				PRODUCT_BUNDLE_IDENTIFIER = com.geotify.com;
 				PRODUCT_NAME = Geofence;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
@@ -391,7 +391,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D90CB66C1A739B7A00228A1F /* Build configuration list for PBXNativeTarget "Geotify" */ = {
+		D90CB66C1A739B7A00228A1F /* Build configuration list for PBXNativeTarget "\" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D90CB66D1A739B7A00228A1F /* Debug */,
