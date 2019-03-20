@@ -26,6 +26,14 @@ class GeofenceViewController: UIViewController {
     loadAllGeotifications()
   }
   
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if segue.identifier == "addGeotification" {
+      let navigationController = segue.destination as! UINavigationController
+      let vc = navigationController.viewControllers.first as! AddGeofenceViewController
+      vc.delegate = self
+    }
+  }
+  
   // MARK: Loading and saving functions
   func loadAllGeotifications() {
     geotifications.removeAll()

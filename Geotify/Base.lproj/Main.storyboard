@@ -84,10 +84,13 @@
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="barTintColor" red="0.093308731749999999" green="0.68869601349999998" blue="0.36501130570000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
+                    <connections>
+                        <segue destination="d1Z-Hn-Hhw" kind="relationship" relationship="rootViewController" id="IhJ-mD-ObI"/>
+                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vcK-ZI-EcJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="689" y="505"/>
+            <point key="canvasLocation" x="719" y="505"/>
         </scene>
         <!--Add Geotification-->
         <scene sceneID="v8o-K6-gcR">
@@ -254,7 +257,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8xS-Yt-d5M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1348" y="505"/>
+            <point key="canvasLocation" x="1545" y="505"/>
         </scene>
     </scenes>
     <resources>
