@@ -94,6 +94,24 @@ class GeofenceViewController: UIViewController {
     return region
   }
   
+  func startMonitoring(geotification: Geotification) {
+    if !CLLocationManager.isMonitoringAvailable(for: CLCircularRegion.self) {
+      showAlert(withTitle:"Error", message: "Geofencing is not supported on this device!")
+      return
+    }
+    
+    if CLLocationManager.authorizationStatus() != .authorizedAlways {
+      let message = """
+      Your geotification is saved but will only be activated once you grant
+      Geotify permission to access the device location.
+      """
+      showAlert(withTitle:"Warning", message: message)
+    }
+    
+    let fenceRegion = region(with: geotification)
+    locationManager.startMonitoring(for: fenceRegion)
+  }
+  
   func stopMonitoring(geotification: Geotification) {
     for region in locationManager.monitoredRegions {
       guard let circularRegion = region as? CLCircularRegion, circularRegion.identifier == geotification.identifier else { continue }
